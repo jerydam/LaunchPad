@@ -9,11 +9,11 @@ contract cloneMultiSig {
 
     function createLau(address[] memory _admins)
         public
-        returns (MultiSig newMultisig)
+        returns (LaunchPad newLaunchPad)
     {
-        newMultisig = new MultiSig(_admins, msg.sender);
-        _multisigs.push(newMultisig);
+        newLaunchPad = new LaunchPad(_admins, msg.sender);
+        _launchpad.push(newLaunchPad);
 
-        emit child(address(newMultisig));
+        emit child(address(newLaunchPad));
     }
 }
